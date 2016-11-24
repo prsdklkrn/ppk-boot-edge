@@ -13,7 +13,7 @@ import feign.RequestLine;
 public interface MicroBClient {
 
 	@Headers(HttpHeaders.CONTENT_TYPE + ":" + MediaType.APPLICATION_JSON_VALUE)
-	@RequestLine("GET /ms/v1/data/")
+	@RequestLine("GET /ms/v2/content/")
 	Map<String, String> getContent();
 
 }
