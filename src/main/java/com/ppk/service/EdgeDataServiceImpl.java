@@ -2,6 +2,7 @@ package com.ppk.service;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ppk.edge.entities.MSData;
@@ -20,6 +21,7 @@ public class EdgeDataServiceImpl implements EdgeDataService {
 	private final MicroAClient		microAClient;
 	private final MicroBClient		microBClient;
 
+	@Autowired
 	public EdgeDataServiceImpl(
 			CustomObservable customObservable,
 			MicroAClient microAClient,
