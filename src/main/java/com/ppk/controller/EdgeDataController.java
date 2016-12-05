@@ -14,18 +14,19 @@ import com.ppk.service.EdgeDataService;
 
 @RestController
 public class EdgeDataController {
-	
+
 	private static final String		EDGE_BASE_METRIC_URL	= "/edge/v1/data";
 
-	private final EdgeDataService edgeDataService;
+	private final EdgeDataService	edgeDataService;
 
 	@Autowired
 	public EdgeDataController(EdgeDataService edgeDataService) {
 		this.edgeDataService = edgeDataService;
 	}
 
-	@Timed(name = EDGE_BASE_METRIC_URL + "/.GET", absolute = true)
-	@ExceptionMetered(name = EDGE_BASE_METRIC_URL + "/.GET." + ExceptionMetered.DEFAULT_NAME_SUFFIX, absolute = true)
+	@Timed(name = EDGE_BASE_METRIC_URL + " == [GET]", absolute = true)
+	@ExceptionMetered(name = EDGE_BASE_METRIC_URL + " == [GET" + ExceptionMetered.DEFAULT_NAME_SUFFIX
+			+ "]", absolute = true)
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody EdgeData welcomeMessage() {
 		return edgeDataService.getEdgeData();
