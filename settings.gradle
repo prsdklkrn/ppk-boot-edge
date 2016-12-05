@@ -1,2 +1,3 @@
 includeFlat 'feign-ribbon-consul-client'
 includeFlat 'ppk-consul-client'
+includeFlat 'ppk-metrics'

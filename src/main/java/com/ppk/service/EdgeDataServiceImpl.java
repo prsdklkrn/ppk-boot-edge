@@ -5,6 +5,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.codahale.metrics.annotation.ExceptionMetered;
+import com.codahale.metrics.annotation.Timed;
 import com.ppk.edge.entities.MSData;
 import com.ppk.feign.MicroAClient;
 import com.ppk.feign.MicroBClient;
@@ -31,6 +33,8 @@ public class EdgeDataServiceImpl implements EdgeDataService {
 		this.microBClient = microBClient;
 	}
 
+	@Timed
+	@ExceptionMetered
 	@Override
 	public EdgeData getEdgeData() {
 		Observable<MSData> microAObservable = customObservable.getObservable(() -> microAClient.getMSData());
