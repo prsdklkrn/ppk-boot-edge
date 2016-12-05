@@ -25,7 +25,7 @@ public class EdgeDataController {
 	}
 
 	@Timed(name = EDGE_BASE_METRIC_URL + " == [GET]", absolute = true)
-	@ExceptionMetered(name = EDGE_BASE_METRIC_URL + " == [GET" + ExceptionMetered.DEFAULT_NAME_SUFFIX
+	@ExceptionMetered(name = EDGE_BASE_METRIC_URL + " == [GET " + ExceptionMetered.DEFAULT_NAME_SUFFIX
 			+ "]", absolute = true)
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody EdgeData welcomeMessage() {
